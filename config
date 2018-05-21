@@ -260,6 +260,7 @@ for_window [instance="yakuake"] floating enable
 
 # Windows to float
 for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
+for_window [class="Terminator" title="Terminator Preferences"] floating enable
 
 # Set background
 #exec_always feh --bg-scale ~/Pictures/jupiter.jpg
