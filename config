@@ -275,3 +275,6 @@ exec_always feh --randomize --bg-scale ~/Pictures/material_*
 #exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
 #exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
 #exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
+
+# Turn on numlock by default
+exec --no-startup-id numlockx on
