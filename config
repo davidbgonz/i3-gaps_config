@@ -245,7 +245,7 @@ bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Monitor/s config
 #exec_always xrandr --output eDP1 --mode 1920x1080
-exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
+exec_always --no-startup-id $HOME/.screenlayout/three_monitor.sh
 
 # Rofi config
 exec compton -f
@@ -270,6 +270,6 @@ for_window [class="Terminator" title="Terminator Preferences"] floating enable
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
 
 # Restore work session
-exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
-exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
+#exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
+#exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
+#exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
