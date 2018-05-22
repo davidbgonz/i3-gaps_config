@@ -224,7 +224,7 @@ gaps inner 10
 # i3-lock config
 bindsym $mod+l exec i3lock-custom
 # auto lock timer
-exec --no-startup-id xautolock -time 15 -locker i3lock-custom
+exec --no-startup-id xautolock -time 5 -locker i3lock-custom
 # auto screen-off timer
 exec --no-startup-id xset s off
 exec --no-startup-id xset s noblank
