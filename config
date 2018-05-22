@@ -272,9 +272,22 @@ for_window [class="Terminator" title="Terminator Preferences"] floating enable
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
 
 # Restore work session
-#exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
-#exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
-#exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
+exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
+exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
+# workspace 1 windows
+exec --no-startup-id thunderbird
+exec --no-startup-id subl3
+exec --no-startup-id slack
+# workspace 2 windows
+exec --no-startup-id thunar
+exec --no-startup-id gitkraken
+exec --no-startup-id kronometer
+exec --no-startup-id firefox
+# workspace 3 windows
+exec --no-startup-id firefox-developer-edition
+exec --no-startup-id terminator
+exec --no-startup-id terminator
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
