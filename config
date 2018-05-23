@@ -247,8 +247,6 @@ bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Monitor/s config
-#exec_always xrandr --output eDP1 --mode 1920x1080
-#exec --no-startup-id xrandr --output eDP1 --primary
 exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
 
 # Rofi config
@@ -264,15 +262,9 @@ for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="Arandr" instance="arandr"] floating enable
+for_window [class="octopi"] floating enable
 
 # Set background
-#exec_always feh --bg-scale ~/Pictures/jupiter.jpg
-#exec_always feh --bg-scale ~/Pictures/material_3rd_rock.jpg
-#exec_always feh --bg-scale ~/Pictures/material_planets.jpg
-#exec_always feh --bg-scale ~/Pictures/material_rocket.jpg
-#exec_always feh --bg-scale ~/Pictures/material_mars_blastoff.jpg
-#exec_always feh --bg-scale ~/Pictures/material_earth.jpg
-#exec_always feh --bg-scale ~/Pictures/material_outer_space.jpg
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
 
 # Restore work session
