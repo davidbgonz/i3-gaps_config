@@ -214,6 +214,7 @@ bar {
 		urgent_workspace	$RED	$BG		$RED
 	}
 	position top
+	tray_output primary
 }
 
 # i3-gaps config
@@ -279,20 +280,14 @@ exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1
 exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
 exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
 # workspace 1 windows
-exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3'
-#exec_always --no-startup-id subl3
-#exec_always --no-startup-id slack
+exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec slack'
 # workspace 2 windows
-exec --no-startup-id i3-msg 'workspace 2; exec thunar; exec kronometer; exec firefox;'
-#exec_always --no-startup-id thunar
-#exec_always --no-startup-id gitkraken
-#exec_always --no-startup-id kronometer
-#exec_always --no-startup-id firefox
+exec --no-startup-id i3-msg 'workspace 2; exec thunar; exec kronometer; exec firefox'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
-#exec_always --no-startup-id firefox-developer-edition
-#exec_always --no-startup-id terminator
-#exec_always --no-startup-id terminator
+
+# Startup tray apps
+exec --no-startup-id polychromatic-tray-applet
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
