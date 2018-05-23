@@ -2,7 +2,7 @@
 
 # Left click
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
-	exec octopi
+	exec octopi &
 fi
 
 PACMAN_COUNT=$(pacman -Qu | wc -l)

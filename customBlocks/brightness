@@ -5,7 +5,7 @@ METHOD="xbacklight"
 
 # Left click
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
-  exec arandr
+  exec arandr &
 # Scroll up
 elif [[ "${BLOCK_BUTTON}" -eq 4 ]]; then
   xbacklight -inc 10

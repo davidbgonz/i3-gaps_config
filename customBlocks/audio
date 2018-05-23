@@ -2,7 +2,7 @@
 
 # Left click
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
-  exec pavucontrol
+  exec pavucontrol &
 # Scroll up
 elif [[ "${BLOCK_BUTTON}" -eq 4 ]]; then
   amixer -q sset Master 5%+
