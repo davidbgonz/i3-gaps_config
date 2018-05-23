@@ -248,7 +248,8 @@ bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Monitor/s config
 #exec_always xrandr --output eDP1 --mode 1920x1080
-exec_always --no-startup-id $HOME/.screenlayout/three_monitor.sh
+#exec --no-startup-id xrandr --output eDP1 --primary
+exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
 
 # Rofi config
 exec compton -f
@@ -261,6 +262,8 @@ for_window [instance="yakuake"] floating enable
 # Windows to float
 for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="Arandr" instance="arandr"] floating enable
 
 # Set background
 #exec_always feh --bg-scale ~/Pictures/jupiter.jpg
@@ -283,6 +286,7 @@ exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3
 exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec slack'
 # workspace 2 windows
 exec --no-startup-id i3-msg 'workspace 2; exec thunar; exec kronometer; exec firefox'
+bindsym $mod+g exec gitkraken
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 
