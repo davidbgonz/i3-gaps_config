@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
-	exec terminator -e nmtui &
+	exec i3-sensible-terminal -e nmtui &
 fi
 
 SSID_NAME=$(nmcli -t -f ACTIVE,SSID device wifi | egrep '^yes' | cut -d ":" -f 2)
