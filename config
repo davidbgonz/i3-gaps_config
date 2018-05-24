@@ -237,8 +237,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
@@ -267,6 +267,8 @@ for_window [class="octopi"] floating enable
 for_window [class="URxvt" title="htop"] floating enable
 for_window [class="URxvt" title="nmtui"] floating enable
 for_window [class="Thunar" title="^Trash"] floating enable
+for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
+for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
 
 # Set background
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
