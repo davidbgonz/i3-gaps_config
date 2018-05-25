@@ -11,16 +11,28 @@ elif [[ "${BLOCK_BUTTON}" -eq 5 ]]; then
   amixer -q sset Master 5%-
 fi
 
+VOLUME_ON=""
+VOLUME_OFF=""
+VOLUME_MUTE=""
+
 statusLine=$(amixer get Master | tail -n 1)
 status=$(echo "${statusLine}" | grep -wo "on")
 volume=$(echo "${statusLine}" | awk -F ' ' '{print $5}' | tr -d '[]%')
 
 if [[ "${status}" == "on" ]]; then
-  echo "${volume}%"
-  echo "${volume}%"
-  echo ""
+  if [[ "${volume}" == "0" ]]; then
+    echo "${VOLUME_OFF}"
+    echo "${VOLUME_OFF}"
+    echo ""
+    exit 33
+  else  
+    echo "$TEST ${VOLUME_ON} ${volume}%"
+    echo "${VOLUME_ON} ${volume}%"
+    echo ""
+  fi
 else
-  echo "off"
-  echo "off"
+  echo "${VOLUME_MUTE}"
+  echo "${VOLUME_MUTE}"
   echo ""
+  exit 33
 fi
