@@ -290,6 +290,9 @@ for_window [class="URxvt" title="nmtui"] floating enable
 for_window [class="Thunar" title="^Trash"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
+for_window [class="polychromatic-controller"] floating enable
+for_window [class="systemsettings"] floating enable
+for_window [class="Gpick"] floating enable
 
 # Set background
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
@@ -310,7 +313,7 @@ bindsym $mod+g exec gitkraken
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 
 # Startup tray apps
-exec --no-startup-id polychromatic-tray-applet
+exec polychromatic-tray-applet
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
