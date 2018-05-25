@@ -308,7 +308,6 @@ exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3
 exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec slack'
 # workspace 2 windows
 exec --no-startup-id i3-msg 'workspace 2; exec kronometer; exec firefox; exec gpmdp'
-bindsym $mod+g exec gitkraken
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 
@@ -317,3 +316,7 @@ exec polychromatic-tray-applet
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
+
+# Program shortcuts
+bindsym $mod+g exec gitkraken
+bindsym $mod+c exec gpick -p
