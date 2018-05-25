@@ -183,6 +183,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
 ### Rice Cooker ###
 
 # define Material Pale pallette
