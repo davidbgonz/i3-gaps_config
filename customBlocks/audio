@@ -26,7 +26,7 @@ if [[ "${status}" == "on" ]]; then
     echo ""
     exit 33
   else  
-    echo "$TEST ${VOLUME_ON} ${volume}%"
+    echo "${VOLUME_ON} ${volume}%"
     echo "${VOLUME_ON} ${volume}%"
     echo ""
   fi
