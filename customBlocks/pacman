@@ -18,6 +18,7 @@ fi
 # Updates available for pacman
 if [[ "${PACMAN_COUNT}" -gt 0 ]]; then
 	echo "#F07178\n"
+	exit 33
 # Updates available for AUR
 elif [[ "${YAOURT_COUNT}" -gt 0 ]]; then
 	echo "#FFCB6B\n"
