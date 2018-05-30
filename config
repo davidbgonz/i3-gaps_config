@@ -311,6 +311,10 @@ exec --no-startup-id i3-msg 'workspace 2; exec kronometer; exec firefox; exec gp
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 
+# Load GitKraken after all other apps have loaded
+assign [class="^GitKraken$"] 2
+exec --no-startup-id gitkraken
+
 # Startup tray apps
 exec polychromatic-tray-applet
 
