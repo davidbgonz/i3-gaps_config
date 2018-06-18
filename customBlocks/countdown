@@ -14,7 +14,7 @@ DIFF_DATE=$((END_DATE - CUR_DATE))
 DIFF=""
 
 if [[ "${DIFF_DATE}" -le 0 ]]; then
-  echo " "
+  echo "Go"
   echo ""
   exit 33
 fi
