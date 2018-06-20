@@ -309,6 +309,7 @@ for_window [class="Google Play Music Desktop Player" title="Color Picker"] float
 for_window [class="polychromatic-controller"] floating enable
 for_window [class="systemsettings"] floating enable
 for_window [class="Gpick"] floating enable
+for_window [class="Firefox Developer Edition" instance="Alert" window_role="alert"] floating enable
 
 # Set background
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
