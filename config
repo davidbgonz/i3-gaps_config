@@ -278,22 +278,6 @@ bindsym $mod+d exec rofi -show drun -theme matpale
 exec yakuake
 for_window [instance="yakuake"] floating enable
 
-## Plasma Integration
-# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-## Avoid tiling popups, dropdown windows from plasma
-# for the first time, manually resize them, i3 will remember the setting for floating windows
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable; border none
-for_window [title="plasma-desktop"] floating enable; border none
-for_window [title="win7"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
-for_window [class="Kmix"] floating enable; border none
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Plasmoidviewer"] floating enable; border none
-
 # Windows to float
 for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
 for_window [window_role="filterlist" class="(?i)Thunderbird"] floating enable
@@ -314,6 +298,9 @@ for_window [class="Firefox Developer Edition" instance="Alert" window_role="aler
 # Set background
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
 
+# Run programs on boot
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+
 # Restore work session
 workspace 1 output eDP1
 workspace 2 output DVI-I-2-2
@@ -322,11 +309,11 @@ exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1
 exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
 exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
 # workspace 1 windows
-#exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec slack'
+exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec slack'
 # workspace 2 windows
-#exec --no-startup-id i3-msg 'workspace 2; exec kronometer; exec firefox; exec gpmdp'
+exec --no-startup-id i3-msg 'workspace 2; exec kronometer; exec firefox; exec gpmdp; exec thunar'
 # workspace 3 windows
-#exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
+exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 
 # Load GitKraken after all other apps have loaded
 assign [class="^GitKraken$"] 2
