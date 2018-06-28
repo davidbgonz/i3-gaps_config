@@ -321,7 +321,8 @@ assign [class="^GitKraken$"] 2
 #exec --no-startup-id gitkraken
 
 # Startup tray apps
-exec polychromatic-tray-applet
+exec --no-startup-id polychromatic-tray-applet
+exec --no-startup-id pamac-tray
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
