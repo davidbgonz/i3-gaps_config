@@ -288,6 +288,7 @@ for_window [class="octopi"] floating enable
 for_window [class="Pamac-*"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="polychromatic-controller"] floating enable
+for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Slack" title="^TAG Online:*"] floating enable
 for_window [class="systemsettings"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
