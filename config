@@ -314,7 +314,7 @@ exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3
 # workspace 1 windows
 exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec slack'
 # workspace 2 windows
-exec --no-startup-id i3-msg 'workspace 2; exec kronometer; exec firefox; exec gpmdp; exec thunar'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec thunar'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 
