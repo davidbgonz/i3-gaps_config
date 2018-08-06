@@ -239,7 +239,7 @@ hide_edge_borders both
 #}
 
 # Start polybar
-exec_always --no-startup-id ~/.i3/polybar.sh &
+exec_always --no-startup-id ~/.config/i3/polybar.sh &
 
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
