@@ -296,7 +296,6 @@ for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Slack" title="^TAG Online:*"] floating enable
 for_window [class="systemsettings"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
-for_window [class="Thunar" title="^Trash"] floating enable
 for_window [class="URxvt" title="htop"] floating enable
 for_window [class="URxvt" title="nmtui"] floating enable
 for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
