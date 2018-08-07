@@ -270,9 +270,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
-# Monitor/s config
-exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
-
 # Rofi config
 exec compton -f
 bindsym $mod+d exec rofi -show drun -theme matpale
@@ -301,6 +298,9 @@ for_window [class="URxvt" title="nmtui"] floating enable
 for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
 for_window [window_role="filterlist" class="(?i)Thunderbird"] floating enable
 
+# Monitor/s config
+exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
+
 # Set background
 exec_always feh --randomize --bg-scale ~/Pictures/material_*
 
@@ -310,7 +310,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Startup tray apps
 exec --no-startup-id nm-applet --no-agent
 exec --no-startup-id polychromatic-tray-applet
-exec --no-startup-id pamac-tray
 exec --no-startup-id caffeine
 
 # Restore work session
