@@ -286,6 +286,7 @@ for_window [class="Gpick"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
 for_window [class="octopi"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pamac-*"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="polychromatic-controller"] floating enable
@@ -337,3 +338,4 @@ exec --no-startup-id numlockx on
 bindsym $mod+g exec gitkraken
 bindsym $mod+c exec gpick -p
 bindsym $mod+p exec firefox-developer-edition --private-window
+
