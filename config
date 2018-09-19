@@ -238,8 +238,9 @@ hide_edge_borders both
 #	tray_output primary
 #}
 
-# Start polybar
-exec_always --no-startup-id ~/.config/i3/polybar.sh &
+# Monitor/s config
+#exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
+exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
 
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
@@ -274,10 +275,6 @@ bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 exec compton -bcf
 bindsym $mod+d exec rofi -show drun -theme matpale
 
-# Yakuake config
-exec yakuake
-for_window [instance="yakuake"] floating enable
-
 # Windows to float
 for_window [class="Arandr" instance="arandr"] floating enable
 for_window [class="Caffeine" title="Preferences"] floating enable
@@ -285,33 +282,33 @@ for_window [class="Firefox Developer Edition" instance="Alert" window_role="aler
 for_window [class="Gpick"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
-for_window [class="octopi"] floating enable
-for_window [class="Nm-connection-editor"] floating enable
+for_window [class="Lxappearance"] floating enable
 for_window [class="Pamac-*"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="polychromatic-controller"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Slack" title="^TAG Online:*"] floating enable
-for_window [class="systemsettings"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [class="URxvt" title="htop"] floating enable
 for_window [class="URxvt" title="nmtui"] floating enable
+for_window [class="Wicd-client.py"] floating enable
+for_window [title="TLP-UI"] floating enable
 for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
 for_window [window_role="filterlist" class="(?i)Thunderbird"] floating enable
 
-# Monitor/s config
-exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
-
-# Set background
-exec_always feh --randomize --bg-scale ~/Pictures/material_*
-
-# Run programs on boot
+# Used for graphical authentication
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
+# Setup automounter
+#exec --no-startup-id "devmon --no-gui"
+exec --no-startup-id devmon
+
 # Startup tray apps
-exec --no-startup-id nm-applet --no-agent
+#exec --no-startup-id nm-applet --no-agent
+exec --no-startup-id wicd-gtk --tray
 exec --no-startup-id polychromatic-tray-applet
-exec --no-startup-id caffeine
+#exec --no-startup-id razercommander -q
+#exec --no-startup-id caffeine
 
 # Restore work session
 workspace 1 output eDP1
@@ -323,19 +320,32 @@ exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3
 # workspace 1 windows
 exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec slack'
 # workspace 2 windows
-exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec thunar'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec urxvt -e ranger ~;'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 
-# Load GitKraken after all other apps have loaded
-assign [class="^GitKraken$"] 2
-#exec --no-startup-id gitkraken
+# Start polybar
+exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
+
+# Set background
+exec_always feh --randomize --bg-scale ~/Pictures/material_*
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
 
+# Dropdown Terminal shortcut
+#bindcode 67 exec --no-startup-id xfce4-terminal --disable-server --dropdown --hide-menubar
+bindsym F1 exec xfce4-terminal --drop-down
+
 # Program shortcuts
-bindsym $mod+g exec gitkraken
-bindsym $mod+c exec gpick -p
-bindsym $mod+p exec firefox-developer-edition --private-window
+bindsym Mod1+c exec google-chrome-stable --disk-cache-dir=/tmp/google-chrome-stable_cache
+bindsym Mod1+f exec firefox-developer-edition
+bindsym Mod1+Shift+f exec firefox
+bindsym Mod1+g exec gitkraken
+bindsym Mod1+k exec gpick -p
+bindsym Mod1+p exec firefox-developer-edition --private-window
+bindsym Mod1+q exec qalculate-gtk
+bindsym Mod1+r exec urxvt -e ranger ~
+bindsym Mod1+t exec Thunar
+bindsym Mod1+u exec urxvt
 
