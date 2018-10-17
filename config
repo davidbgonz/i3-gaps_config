@@ -239,13 +239,14 @@ hide_edge_borders both
 #}
 
 # Monitor/s config
-#exec --no-startup-id $HOME/.screenlayout/three_monitor.sh
 exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
+
+# Set background
+exec_always feh --randomize --bg-scale ~/Pictures/material_*
 
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
 gaps inner 5 
-#gaps outer 5
 
 # i3-lock config
 bindsym $mod+l exec i3lock-custom
@@ -328,9 +329,6 @@ exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec t
 # Start polybar
 exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
 
-# Set background
-exec_always feh --randomize --bg-scale ~/Pictures/material_*
-
 # Turn on numlock by default
 exec --no-startup-id numlockx on
 
@@ -340,13 +338,9 @@ bindsym F1 exec xfce4-terminal --drop-down
 
 # Program shortcuts
 bindsym Mod1+c exec google-chrome-stable --disk-cache-dir=/tmp/google-chrome-stable_cache
-bindsym Mod1+f exec firefox-developer-edition
-bindsym Mod1+Shift+f exec firefox
 bindsym Mod1+g exec gitkraken
 bindsym Mod1+k exec gpick -p
-bindsym Mod1+p exec firefox-developer-edition --private-window
 bindsym Mod1+q exec qalculate-gtk
 bindsym Mod1+r exec urxvt -e ranger ~
 bindsym Mod1+t exec Thunar
-bindsym Mod1+u exec urxvt
 
