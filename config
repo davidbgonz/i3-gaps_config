@@ -313,7 +313,7 @@ exec --no-startup-id caffeine
 #exec --no-startup-id razercommander -q
 
 # Restore work session
-workspace 1 output eDP1
+workspace 1 output eDP-1
 workspace 2 output DVI-I-2-2
 workspace 3 output DVI-I-1-1
 exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
