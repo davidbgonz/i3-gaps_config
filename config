@@ -238,24 +238,9 @@ hide_edge_borders both
 #	tray_output primary
 #}
 
-# Monitor/s config
-exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
-
-# Set background
-exec_always feh --randomize --bg-scale ~/Pictures/material_*
-
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
 gaps inner 5 
-
-# i3-lock config
-bindsym $mod+l exec i3lock-custom
-# auto lock timer
-exec --no-startup-id xautolock -time 10 -locker i3lock-custom
-# auto screen-off timer
-exec --no-startup-id xset s off
-exec --no-startup-id xset s noblank
-exec --no-startup-id xset dpms 0 0 1800
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
@@ -305,6 +290,24 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #exec --no-startup-id "devmon --no-gui"
 exec --no-startup-id devmon
 
+# Monitor/s config
+exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
+
+# Set background
+exec_always feh --randomize --bg-scale ~/Pictures/material_*
+
+# i3-lock config
+bindsym $mod+l exec i3lock-custom
+# auto lock timer
+exec --no-startup-id xautolock -time 10 -locker i3lock-custom
+# auto screen-off timer
+exec --no-startup-id xset s off
+exec --no-startup-id xset s noblank
+exec --no-startup-id xset dpms 0 0 1800
+
+# Start polybar
+exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
+
 # Startup tray apps
 #exec --no-startup-id nm-applet --no-agent
 exec --no-startup-id wicd-gtk --tray
@@ -325,9 +328,6 @@ exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl3; exec sla
 exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec thunar;'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
-
-# Start polybar
-exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
