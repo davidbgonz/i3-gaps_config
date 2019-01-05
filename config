@@ -301,12 +301,12 @@ bindsym $mod+l exec i3lock-custom
 # auto lock timer
 exec --no-startup-id xautolock -time 10 -locker i3lock-custom
 # auto screen-off timer
-exec --no-startup-id xset s off
-exec --no-startup-id xset s noblank
-exec --no-startup-id xset dpms 0 0 1800
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset s noblank
+exec_always --no-startup-id xset dpms 0 0 3600
 
 # Start polybar
-exec_always --no-startup-id $HOME/.config/i3/polybar.sh &
+exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 
 # Startup tray apps
 #exec --no-startup-id nm-applet --no-agent
