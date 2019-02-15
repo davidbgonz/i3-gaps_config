@@ -294,7 +294,8 @@ exec --no-startup-id "devmon --no-gui"
 exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
 
 # Set background
-exec_always feh --randomize --bg-scale ~/Pictures/material_*
+#exec_always feh --randomize --bg-scale ~/Pictures/material_*
+exec_always --no-startup-id xsetroot -solid "$BBLK"
 
 # i3-lock config
 bindsym $mod+l exec i3lock-custom
