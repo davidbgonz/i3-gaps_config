@@ -240,7 +240,7 @@ hide_edge_borders both
 
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
-gaps inner 5 
+gaps inner 10 
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
