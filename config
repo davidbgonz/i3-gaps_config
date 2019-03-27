@@ -305,16 +305,6 @@ exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset s noblank
 exec_always --no-startup-id xset dpms 0 0 3600
 
-# Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
-
-# Startup tray apps
-#exec --no-startup-id nm-applet --no-agent
-exec --no-startup-id wicd-gtk --tray
-exec --no-startup-id polychromatic-tray-applet
-exec --no-startup-id caffeine
-#exec --no-startup-id razercommander -q
-
 # Restore work session
 workspace 1 output eDP-1
 workspace 2 output DVI-I-1-1 HDMI-1
@@ -333,6 +323,16 @@ exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec urxvt -
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 # workspace 5 windows
 exec --no-startup-id i3-msg 'workspace 5; exec opera'
+
+# Start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
+
+# Startup tray apps
+#exec --no-startup-id nm-applet --no-agent
+exec --no-startup-id wicd-gtk --tray
+exec --no-startup-id polychromatic-tray-applet
+exec --no-startup-id caffeine
+#exec --no-startup-id razercommander -q
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
