@@ -273,6 +273,7 @@ for_window [class="Gpick"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pamac-*"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="polychromatic-controller"] floating enable
@@ -328,8 +329,8 @@ exec --no-startup-id i3-msg 'workspace 5; exec opera'
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 
 # Startup tray apps
-#exec --no-startup-id nm-applet --no-agent
-exec --no-startup-id wicd-gtk --tray
+exec --no-startup-id nm-applet --no-agent
+#exec --no-startup-id wicd-gtk --tray
 exec --no-startup-id polychromatic-tray-applet
 exec --no-startup-id caffeine
 #exec --no-startup-id razercommander -q
