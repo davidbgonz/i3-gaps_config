@@ -307,23 +307,23 @@ exec_always --no-startup-id xset s noblank
 exec_always --no-startup-id xset dpms 0 0 3600
 
 # Restore work session
-workspace 1 output eDP-1
-workspace 2 output DVI-I-1-1 HDMI-1
-workspace 3 output DVI-I-2-2 HDMI-1
-workspace 5 output DVI-I-2-2
-exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
-exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
-exec --no-startup-id "i3-msg 'workspace5; append_layout ~/.config/i3/workspace-5.json'"
+#workspace 1 output eDP-1
+#workspace 2 output DVI-I-1-1 HDMI-1
+#workspace 3 output DVI-I-2-2 HDMI-1
+#workspace 5 output DVI-I-2-2
+#exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
+#exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
+#exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
+#exec --no-startup-id "i3-msg 'workspace5; append_layout ~/.config/i3/workspace-5.json'"
 # workspace 1 windows
-exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl; exec slack'
+#exec --no-startup-id i3-msg 'workspace 1; exec thunderbird; exec subl; exec slack'
 # workspace 2 windows
 #exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec thunar;'
-exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec urxvt -e ranger ~;'
+#exec --no-startup-id i3-msg 'workspace 2; exec firefox; exec gpmdp; exec urxvt -e ranger ~;'
 # workspace 3 windows
-exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
+#exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition; exec terminator; exec terminator'
 # workspace 5 windows
-exec --no-startup-id i3-msg 'workspace 5; exec opera'
+#exec --no-startup-id i3-msg 'workspace 5; exec opera'
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
