@@ -10,3 +10,6 @@ elif [ $connectedOutputs -eq 2 ]; then
 else
 	sh $HOME/.screenlayout/single_monitor.sh
 fi
+
+# Set backgrounds for connected monitors
+feh --randomize --bg-scale ~/Pictures/material_*
