@@ -246,9 +246,9 @@ gaps inner 10
 exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -341,6 +341,10 @@ exec --no-startup-id numlockx on
 # Dropdown Terminal shortcut
 #bindcode 67 exec --no-startup-id xfce4-terminal --disable-server --dropdown --hide-menubar
 bindsym F1 exec xfce4-terminal --drop-down
+
+# Shortcuts for Logitech Master 2S
+bindsym --whole-window --border button9 exec playerctl play-pause
+bindsym --whole-window --border button8 exec playerctl next
 
 # Program shortcuts
 bindsym Mod1+c exec google-chrome-stable --disk-cache-dir=/tmp/google-chrome-stable_cache
