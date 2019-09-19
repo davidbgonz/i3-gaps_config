@@ -246,9 +246,9 @@ gaps inner 10
 exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 	# increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 	# decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle 					# mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -340,8 +340,10 @@ exec --no-startup-id numlockx on
 bindsym F1 exec xfce4-terminal --drop-down
 
 # Shortcuts for Logitech Master 2S
-bindsym --whole-window --border button9 exec playerctl play-pause
-bindsym --whole-window --border button8 exec playerctl next
+bindsym --whole-window --border button6 exec pactl set-sink-volume @DEFAULT_SINK@ +5% 	# thumb wheel up
+bindsym --whole-window --border button7 exec pactl set-sink-volume @DEFAULT_SINK@ -5% 	# thumb wheel down
+bindsym --whole-window --border button8 exec playerctl next								# thumb button bottom-right
+bindsym --whole-window --border button9 exec playerctl play-pause						# thumb button top-left
 
 # Program shortcuts
 bindsym Mod1+c exec google-chrome-stable --disk-cache-dir=/tmp/google-chrome-stable_cache
