@@ -270,6 +270,7 @@ for_window [class="Caffeine" title="Preferences"] floating enable
 for_window [class="Evolution-alarm-notify"] floating enable
 for_window [class="feh" title="feh \[1 of 1\]"] floating enable
 for_window [class="Firefox Developer Edition" instance="Alert" window_role="alert"] floating enable
+for_window [class="firefoxdeveloperedition" window_role="page-info"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
@@ -277,6 +278,7 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pamac-*"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="Pidgin"] floating enable
 for_window [class="polychromatic-controller"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Slack" title="^TAG Online:*"] floating enable
