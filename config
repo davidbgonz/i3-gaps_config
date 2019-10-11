@@ -328,11 +328,12 @@ exec --no-startup-id i3-msg 'workspace 4; exec remmina;'
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 
 # Startup tray apps
-#exec --no-startup-id nm-applet --no-agent
-exec --no-startup-id wicd-gtk --tray
-exec --no-startup-id polychromatic-tray-applet
 exec --no-startup-id caffeine
+#exec --no-startup-id nm-applet --no-agent
+exec --no-startup-id perl -pi -e "s/pref name='(list_visible|list_maximized)' type='bool' value='[1-9]'/pref name'\$1' type='bool' value='0'/gi" ~/.purple/prefs.xml; pidgin
+exec --no-startup-id polychromatic-tray-applet
 #exec --no-startup-id razercommander -q
+exec --no-startup-id wicd-gtk --tray
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
