@@ -300,7 +300,7 @@ exec --no-startup-id "devmon --no-gui"
 # i3-lock config
 bindsym $mod+l exec i3lock-custom && sleep 1
 # auto lock timer
-exec --no-startup-id xautolock -time 1 -locker i3lock-custom && sleep 1
+exec --no-startup-id xautolock -time 2 -locker i3lock-custom && sleep 1
 # auto screen-off timer
 exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset s noblank
