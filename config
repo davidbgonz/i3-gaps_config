@@ -310,19 +310,23 @@ exec_always --no-startup-id xset dpms 0 0 3600
 workspace 1 output eDP-1
 workspace 2 output DP-1-1 eDP-1 
 workspace 3 output DP-1-2 HDMI-1
-workspace 4 output DP-1-1 HDMI-1
+workspace 4 output eDP-1
+workspace 5 output DP-1-1 HDMI-1
 exec --no-startup-id "i3-msg 'workspace1; append_layout ~/.config/i3/workspace-1.json'"
 exec --no-startup-id "i3-msg 'workspace2; append_layout ~/.config/i3/workspace-2.json'"
 exec --no-startup-id "i3-msg 'workspace3; append_layout ~/.config/i3/workspace-3.json'"
 exec --no-startup-id "i3-msg 'workspace4; append_layout ~/.config/i3/workspace-4.json'"
+exec --no-startup-id "i3-msg 'workspace5; append_layout ~/.config/i3/workspace-5.json'"
 # workspace 1 windows
-exec --no-startup-id i3-msg 'workspace 1; exec gpmdp; exec urxvt -e ranger ~; exec slack;'
+exec --no-startup-id i3-msg 'workspace 1; exec evolution;'
 # workspace 2 windows
 exec --no-startup-id i3-msg 'workspace 2; exec code-oss;'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition;'
 # workspace 4 windows
-exec --no-startup-id i3-msg 'workspace 4; exec remmina;'
+exec --no-startup-id i3-msg 'workspace 4; exec slack; exec teams-for-linux;'
+# workspace 5 windows
+exec --no-startup-id i3-msg 'workspace 5; exec remmina;'
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
@@ -330,7 +334,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 # Startup tray apps
 exec --no-startup-id caffeine
 #exec --no-startup-id nm-applet --no-agent
-exec --no-startup-id perl -pi -e "s/pref name='(list_visible|list_maximized)' type='bool' value='[1-9]'/pref name'\$1' type='bool' value='0'/gi" ~/.purple/prefs.xml; pidgin
+exec --no-startup-id pidgin
 exec --no-startup-id polychromatic-tray-applet
 #exec --no-startup-id razercommander -q
 exec --no-startup-id wicd-gtk --tray
