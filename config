@@ -324,7 +324,7 @@ exec --no-startup-id i3-msg 'workspace 2; exec code-oss;'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition;'
 # workspace 4 windows
-exec --no-startup-id i3-msg 'workspace 4; exec slack; exec teams-for-linux;'
+exec --no-startup-id i3-msg 'workspace 4; exec gpmdp; exec slack; exec teams-for-linux;'
 # workspace 5 windows
 exec --no-startup-id i3-msg 'workspace 5; exec remmina;'
 
