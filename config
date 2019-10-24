@@ -320,7 +320,7 @@ exec --no-startup-id "i3-msg 'workspace5; append_layout ~/.config/i3/workspace-5
 # workspace 1 windows
 exec --no-startup-id i3-msg 'workspace 1; exec evolution;'
 # workspace 2 windows
-exec --no-startup-id i3-msg 'workspace 2; exec code-oss;'
+exec --no-startup-id i3-msg 'workspace 2; exec code;'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition;'
 # workspace 4 windows
