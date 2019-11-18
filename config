@@ -261,7 +261,7 @@ bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Rofi config
-exec compton -bcf
+exec picom -bcf
 bindsym $mod+d exec rofi -show drun -theme matpale
 
 # Windows to float
