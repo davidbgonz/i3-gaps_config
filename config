@@ -326,8 +326,8 @@ exec_always --no-startup-id xset dpms 0 0 3600
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 
 # Startup tray apps
-#exec --no-startup-id nm-applet --no-agent
-exec --no-startup-id wicd-gtk --tray
+exec --no-startup-id nm-applet --no-agent
+#exec --no-startup-id wicd-gtk --tray
 exec --no-startup-id polychromatic-tray-applet
 exec --no-startup-id caffeine
 #exec --no-startup-id razercommander -q
