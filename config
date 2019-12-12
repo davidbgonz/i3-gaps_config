@@ -275,6 +275,7 @@ for_window [class="Gpick"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
 for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="Microsoft Teams" title="Microsoft Teams Notification"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pamac-*"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
@@ -324,7 +325,7 @@ exec --no-startup-id i3-msg 'workspace 2; exec code;'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition;'
 # workspace 4 windows
-exec --no-startup-id i3-msg 'workspace 4; exec gpmdp; exec slack; exec teams-for-linux;'
+exec --no-startup-id i3-msg 'workspace 4; exec gpmdp; exec slack; exec teams;'
 # workspace 5 windows
 exec --no-startup-id i3-msg 'workspace 5; exec remmina;'
 
