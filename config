@@ -286,7 +286,7 @@ for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [class="URxvt" title="htop"] floating enable
 for_window [class="URxvt" title="nmtui"] floating enable
 for_window [class="Wicd-client.py"] floating enable
-for_window [instance="login.microsoft.com__*" window_role="pop-up"] floating enable
+for_window [instance="login.microsoftonline.com__*" window_role="pop-up"] floating enable
 for_window [title="TLP-UI"] floating enable
 for_window [window_role="filterlist" class="(?i)Thunderbird"] floating enable
 
