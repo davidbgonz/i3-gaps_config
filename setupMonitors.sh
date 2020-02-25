@@ -3,7 +3,9 @@
 # Get number of connected monitors
 connectedOutputs=$(xrandr | grep " connected" | wc -l)
 
-if [ $connectedOutputs -eq 3 ]; then
+if [ $connectedOutputs -eq 4 ]; then
+	sh $HOME/.screenlayout/three_ext_monitor.sh
+elif [ $connectedOutputs -eq 3 ]; then
 	sh $HOME/.screenlayout/three_monitor.sh
 elif [ $connectedOutputs -eq 2 ]; then
 	sh $HOME/.screenlayout/dual_monitor.sh
