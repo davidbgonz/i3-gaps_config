@@ -92,7 +92,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+minus move scratchpad
 
 # show the first scratchpad window
-bindrym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -327,8 +327,7 @@ exec --no-startup-id i3-msg 'workspace 3, append_layout ~/.config/i3/workspace-3
 exec --no-startup-id i3-msg 'workspace 4, append_layout ~/.config/i3/workspace-4.json'
 exec --no-startup-id i3-msg 'workspace 5, append_layout ~/.config/i3/workspace-5.json'
 # workspace 1 windows
-assign [class="Evolution"] 1
-exec --no-startup-id i3-msg 'exec evolution'
+exec --no-startup-id i3-msg 'workspace 1, exec evolution'
 # workspace 2 windows
 assign [class="Code"] 2
 exec --no-startup-id i3-msg 'exec code'
