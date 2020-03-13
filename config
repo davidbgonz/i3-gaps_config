@@ -358,7 +358,7 @@ exec --no-startup-id numlockx on
 
 # Dropdown Terminal shortcut
 #bindcode 67 exec --no-startup-id xfce4-terminal --disable-server --dropdown --hide-menubar
-bindsym F1 exec xfce4-terminal --drop-down
+bindsym F12 exec xfce4-terminal --drop-down
 
 # Shortcuts for Logitech Master 2S
 bindsym --whole-window --border button6 exec pactl set-sink-volume @DEFAULT_SINK@ +5% 	# thumb wheel up
