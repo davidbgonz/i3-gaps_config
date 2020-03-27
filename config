@@ -328,7 +328,7 @@ exec --no-startup-id i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-4
 exec --no-startup-id i3-msg 'workspace 5; append_layout ~/.config/i3/workspace-5.json'
 # workspace 1 windows
 assign [class="Evolution"] 1
-exec --no-startup-id i3-msg 'workspace 1; exec evolution'
+exec --no-startup-id i3-msg 'exec evolution'
 # workspace 2 windows
 assign [class="Code"] 2
 exec --no-startup-id i3-msg 'exec code'
@@ -343,9 +343,6 @@ assign [class="org.remmina.Reminna"] 5
 assign [class="F5\ VPN"] 5
 exec --no-startup-id i3-msg 'exec remmina'
 
-# Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
-
 # Startup tray apps
 exec --no-startup-id caffeine
 exec --no-startup-id nm-applet --no-agent
@@ -353,6 +350,9 @@ exec --no-startup-id nm-applet --no-agent
 exec --no-startup-id polychromatic-tray-applet
 #exec --no-startup-id razercommander -q
 #exec --no-startup-id wicd-gtk --tray
+
+# Start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
