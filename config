@@ -309,7 +309,7 @@ exec --no-startup-id "devmon --no-gui"
 # i3-lock config
 bindsym $mod+l exec i3lock-custom && sleep 1
 # auto lock timer
-exec --no-startup-id xautolock -time 2 -locker i3lock-custom -margin 10 && sleep 1
+exec --no-startup-id xautolock -time 2 -locker i3lock-custom -notify 15 -notifier "notify-send -t 3000 'Locking screen in 15 seconds.'" -margin 10 && sleep 1
 # auto screen-off timer
 exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset s noblank
