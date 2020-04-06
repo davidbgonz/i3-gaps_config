@@ -38,10 +38,11 @@ notify() {
 xautolocker() {
 	debug "xautolocker start"
 	xautolock -detectsleep \
-		-time 3 \
-		-locker "killeri3lock -f -e -u -c $LOCKSCREEN_COLOR" \
+		-time 2 \
+		-locker "i3lock-custom" \
 		-notify $NOTIFY_LEAD \
-		-notifier "xset s activate" &
+		-notifier "notify-send -t 3000 \"Locking screen in $NOTIFY_LEAD seconds.\"" \
+		-margin 10 &
 	debug "xautolocker finish"
 }
 
