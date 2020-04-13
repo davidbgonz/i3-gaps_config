@@ -328,25 +328,24 @@ exec --no-startup-id i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-4
 exec --no-startup-id i3-msg 'workspace 5; append_layout ~/.config/i3/workspace-5.json'
 # workspace 1 windows
 assign [class="Evolution"] 1
-exec --no-startup-id i3-msg 'exec evolution'
+exec --no-startup-id i3-msg 'workspace 1; exec evolution'
 # workspace 2 windows
 assign [class="Code"] 2
-exec --no-startup-id i3-msg 'exec code'
+exec --no-startup-id i3-msg 'workspace 2; exec code'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition'
 # workspace 4 windows
 assign [class="Slack"] 4
 assign [class="Microsoft\ Teams\ \-\ Preview"] 4
-exec --no-startup-id i3-msg 'exec slack; exec teams'
+exec --no-startup-id i3-msg 'workspace 4; exec slack; exec teams'
 # workspace 5 windows
 assign [class="org.remmina.Reminna"] 5
 assign [class="F5\ VPN"] 5
-exec --no-startup-id i3-msg 'exec remmina'
+exec --no-startup-id i3-msg 'workspace 5; exec remmina'
 
 # Startup tray apps
-exec --no-startup-id caffeine
+#exec --no-startup-id caffeine
 exec --no-startup-id nm-applet --no-agent
-#exec --no-startup-id pidgin
 exec --no-startup-id polychromatic-tray-applet
 #exec --no-startup-id razercommander -q
 #exec --no-startup-id wicd-gtk --tray
