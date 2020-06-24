@@ -319,6 +319,7 @@ exec_always --no-startup-id xset dpms 0 0 3600
 exec --no-startup-id nm-applet --no-agent
 exec --no-startup-id polychromatic-tray-applet
 #exec --no-startup-id razercommander -q
+exec --no-startup-id solaar -w hide
 #exec --no-startup-id wicd-gtk --tray
 
 # Start polybar
