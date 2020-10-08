@@ -89,10 +89,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus move scratchpad
 
 # show the first scratchpad window
-bindrym $mod+minus scratchpad show
+bindsym $mod+equal scratchpad show
 
 # focus the parent container
 bindsym $mod+a focus parent
