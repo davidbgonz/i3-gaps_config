@@ -4,7 +4,7 @@
 connectedOutputs=$(xrandr | grep " connected" | wc -l)
 
 if [ $connectedOutputs -eq 4 ]; then
-	sh $HOME/.screenlayout/three_ext_monitor.sh
+	sh $HOME/.screenlayout/three_ext_wide_monitor.sh
 elif [ $connectedOutputs -eq 3 ]; then
 	sh $HOME/.screenlayout/three_monitor.sh
 elif [ $connectedOutputs -eq 2 ]; then
