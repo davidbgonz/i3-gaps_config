@@ -221,14 +221,14 @@ set $BCYN	#89DDFF
 set $BWHT	#FFFFFF
 
 # window colors
-#			border	background	text	indicator
-client.focused		$BLU	$BLU		$BWHT	$MAG
-client.unfocused	$FG	$FG		$BWHT	$MAG
-client.focused_inactive	$BLU	$BLU		$WHT	$MAG
-client.urgent		$RED	$BG		$YLW	$MAG
+#						border	background	text	indicator
+client.focused			$BLU	$BLU		$BWHT	$MAG
+client.unfocused		$BG		$BG			$WHT	$BG
+client.focused_inactive	$BG		$BG			$BWHT	$BG
+client.urgent			$RED	$BG			$YLW	$RED
 
 # hide indicator borders
-hide_edge_borders both
+#hide_edge_borders both
 
 ### Dinner is Ready ###
 
@@ -249,7 +249,7 @@ hide_edge_borders both
 #}
 
 # i3-gaps config
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 gaps inner 10 
 
 # Monitor/s config
@@ -354,7 +354,7 @@ workspace 3 output HDMI-1 DP-1-2
 workspace 4 output primary
 workspace 5 output HDMI-1 DP-1-1
 
-#exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'
+exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'
 exec --no-startup-id i3-msg 'workspace 2; append_layout ~/.config/i3/workspace-2.json'
 exec --no-startup-id i3-msg 'workspace 3; append_layout ~/.config/i3/workspace-3.json'
 exec --no-startup-id i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-4.json'
@@ -364,7 +364,8 @@ exec --no-startup-id i3-msg 'workspace 5; append_layout ~/.config/i3/workspace-5
 exec --no-startup-id i3-msg 'workspace 1; exec evolution'
 # workspace 2 windows
 #assign [class="Code"] 2
-exec --no-startup-id i3-msg 'workspace 2; exec code'
+#exec --no-startup-id i3-msg 'workspace 2; exec code'
+exec --no-startup-id i3-msg 'workspace 2; exec urxvt -e vim ~/Development'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition'
 # workspace 4 windows
