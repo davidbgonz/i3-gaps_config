@@ -315,18 +315,18 @@ exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset s noblank
 exec_always --no-startup-id xset dpms 0 0 3600
 
+# Start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
+
 # Startup tray apps
 #exec --no-startup-id caffeine
 exec --no-startup-id /usr/lib/kdeconnectd
-exec --no-startup-id kdeconnectd-indicator
+exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id nm-applet --no-agent
 exec --no-startup-id polychromatic-tray-applet
 #exec --no-startup-id razercommander -q
 exec --no-startup-id solaar -w hide
 #exec --no-startup-id wicd-gtk --tray
-
-# Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
@@ -342,7 +342,7 @@ bindsym --whole-window --border button8 exec playerctl next								# thumb butto
 bindsym --whole-window --border button9 exec playerctl play-pause						# thumb button top-left
 
 # Program shortcuts
-bindsym Mod1+c exec google-chrome-stable --disk-cache-dir=/tmp/google-chrome-stable_cache
+bindsym Mod1+c exec chromium --disk-cache-dir=/tmp/chromium_cache --process-per-site
 bindsym Mod1+g exec gitkraken
 bindsym Mod1+k exec gpick -p
 bindsym Mod1+q exec qalculate-gtk
@@ -352,7 +352,7 @@ bindsym Mod1+t exec Thunar
 # Restore work session
 workspace 1 output primary
 workspace 2 output eDP-1 DP-1-1
-workspace 3 output HDMI-1 DP-1-2
+workspace 3 output HDMI-1 DP-1-2 DP-1-1
 workspace 4 output primary
 workspace 5 output HDMI-1 DP-1-1
 
