@@ -198,7 +198,7 @@ bindsym $mod+x [urgent=latest] focus
 
 ### Rice Cooker ###
 
-# define Material Pale pallette
+# define Material Pale palette
 set $BG		#292D3E
 set $FG		#959DCB
 
@@ -354,13 +354,13 @@ workspace 1 output primary
 workspace 2 output eDP-1 DP-1-1
 workspace 3 output HDMI-1 DP-1-2 DP-1-1
 workspace 4 output primary
-workspace 5 output HDMI-1 DP-1-1
+#workspace 5 output HDMI-1 DP-1-1
 
 #exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'
 exec --no-startup-id i3-msg 'workspace 2; append_layout ~/.config/i3/workspace-2.json'
 exec --no-startup-id i3-msg 'workspace 3; append_layout ~/.config/i3/workspace-3.json'
 exec --no-startup-id i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-4.json'
-exec --no-startup-id i3-msg 'workspace 5; append_layout ~/.config/i3/workspace-5.json'
+#exec --no-startup-id i3-msg 'workspace 5; append_layout ~/.config/i3/workspace-5.json'
 # workspace 1 windows
 #assign [class="^Evolution$"] 1
 exec --no-startup-id i3-msg 'workspace 1; exec evolution'
