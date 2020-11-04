@@ -341,8 +341,8 @@ exec --no-startup-id numlockx on
 bindsym F1 exec xfce4-terminal --drop-down
 
 # Shortcuts for Logitech Master 2S
-bindsym --whole-window --border button7 exec pactl set-sink-volume @DEFAULT_SINK@ +5% 	# thumb wheel up
-bindsym --whole-window --border button6 exec pactl set-sink-volume @DEFAULT_SINK@ -5% 	# thumb wheel down
+bindsym --whole-window --border button6 exec pactl set-sink-volume @DEFAULT_SINK@ +5% 	# thumb wheel up
+bindsym --whole-window --border button7 exec pactl set-sink-volume @DEFAULT_SINK@ -5% 	# thumb wheel down
 bindsym --whole-window --border button8 exec playerctl next								# thumb button bottom-right
 bindsym --whole-window --border button9 exec playerctl play-pause						# thumb button top-left
 
