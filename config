@@ -260,6 +260,9 @@ gaps inner 10
 # Monitor/s config
 exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
 
+# Background
+exec --no-startup-id dwall -s firewatch2
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 	# increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 	# decrease sound volume

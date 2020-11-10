@@ -14,4 +14,4 @@ else
 fi
 
 # Set backgrounds for connected monitors
-feh --randomize --bg-scale ~/Pictures/material_*
+#feh --randomize --bg-scale ~/Pictures/material_*
