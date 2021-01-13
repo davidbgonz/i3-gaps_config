@@ -231,12 +231,12 @@ set $BCYN	#89DDFF
 set $BWHT	#EAECF5
 
 # window colors
-#                       border	background	text	indicator   child_border
-client.focused          $BG     $BG         $BLU    $MAG        $BLU
-client.focused_inactive $BG     $BG         $FG     $BG         $BG
-client.unfocused        $BG     $BG         $WHT    $BG         $BG
-client.urgent           $RED    $BG         $YLW    $RED        $RED
-client.placeholder      $BG     $BG         $WHT    $BG         $BG
+#                       border  background  text  indicator  child_border
+client.focused          $BG     $BG         $BLU  $MAG       $BLU
+client.focused_inactive $BG     $BG         $FG   $BG        $BG
+client.unfocused        $BG     $BG         $WHT  $BG        $BG
+client.urgent           $RED    $BG         $YLW  $RED       $RED
+client.placeholder      $BG     $BG         $WHT  $BG        $BG
 client.background       $BG
 
 # hide indicator borders
@@ -285,7 +285,7 @@ bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Rofi config
-exec picom -b #cf
+exec picom -b
 bindsym $mod+d exec rofi -show drun -theme matpale
 
 # Windows to float
@@ -347,6 +347,10 @@ exec --no-startup-id solaar -w hide
 # Notification daemon
 # Note: no-startup-id should be omited for dunst
 exec_always dunst
+
+# Notification daemon
+# Note: no-startup-id should be omited for dunst
+exec dunst
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
