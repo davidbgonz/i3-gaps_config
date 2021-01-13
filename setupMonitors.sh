@@ -14,4 +14,13 @@ else
 fi
 
 # Set backgrounds for connected monitors
+
+# dynamic background
+#killall dyn-wall-rs
+#sleep 0.5
+#background=magic-index
+#dyn-wall-rs -d /usr/share/backgrounds/$background &
+
+# static background
 #feh --randomize --bg-scale ~/Pictures/material_*
+feh --bg-fill /usr/share/backgrounds/static/jump-ship.jpg
