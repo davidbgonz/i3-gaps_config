@@ -190,6 +190,11 @@ mode "resize" {
         bindsym Up resize grow height 10 px or 5 ppt
         bindsym Right resize grow width 10 px or 5 ppt
 
+        # Pressing equal will grow the gaps
+        # Pressing minus will shrink the gaps
+        bindsym equal gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -223,14 +228,16 @@ set $BYLW	#FFCB6B
 set $BBLU	#82AAFF
 set $BMAG	#C792EA
 set $BCYN	#89DDFF
-set $BWHT	#FFFFFF
+set $BWHT	#EAECF5
 
 # window colors
-#						border	background	text	indicator
-client.focused			$BLU	$BLU		$BWHT	$MAG
-client.unfocused		$BG		$BG			$WHT	$BG
-client.focused_inactive	$BG		$BG			$BWHT	$BG
-client.urgent			$RED	$BG			$YLW	$RED
+#                       border	background	text	indicator   child_border
+client.focused          $BG     $BG         $BLU    $MAG        $BLU
+client.focused_inactive $BG     $BG         $FG     $BG         $BG
+client.unfocused        $BG     $BG         $WHT    $BG         $BG
+client.urgent           $RED    $BG         $YLW    $RED        $RED
+client.placeholder      $BG     $BG         $WHT    $BG         $BG
+client.background       $BG
 
 # hide indicator borders
 #hide_edge_borders both
@@ -254,14 +261,13 @@ client.urgent			$RED	$BG			$YLW	$RED
 #}
 
 # i3-gaps config
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 gaps inner 10
 
 # Monitor/s config
+# Backgrounds are setup in script to make sure they are executed
+# after monitor resolutions are setup
 exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
-
-# Background
-exec --no-startup-id dwall -s firewatch2
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 	# increase sound volume
@@ -279,7 +285,7 @@ bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Rofi config
-exec picom -bcf
+exec picom -b #cf
 bindsym $mod+d exec rofi -show drun -theme matpale
 
 # Windows to float
@@ -300,7 +306,6 @@ for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="polychromatic-controller"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
-for_window [class="URxvt" title="htop"] floating enable
 for_window [class="URxvt" title="nmtui"] floating enable
 for_window [class="Wicd-client.py"] floating enable
 for_window [instance="login.microsoftonline.com__*" window_role="pop-up"] floating enable
@@ -323,6 +328,9 @@ exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset s noblank
 exec_always --no-startup-id xset dpms 0 0 3600
 
+# Autotiling
+exec_always --no-startup-id autotiling
+
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
 
@@ -336,12 +344,19 @@ exec --no-startup-id polychromatic-tray-applet
 exec --no-startup-id solaar -w hide
 #exec --no-startup-id wicd-gtk --tray
 
+# Notification daemon
+# Note: no-startup-id should be omited for dunst
+exec_always dunst
+
 # Turn on numlock by default
 exec --no-startup-id numlockx on
 
 # Dropdown Terminal shortcut
 #bindcode 67 exec --no-startup-id xfce4-terminal --disable-server --dropdown --hide-menubar
-bindsym F1 exec xfce4-terminal --drop-down
+#bindsym F1 exec xfce4-terminal --drop-down
+exec --no-startup-id urxvt -name dropdown
+for_window [instance="dropdown"] floating enable, resize set 1200 500, move scratchpad
+bindsym F1 [instance="dropdown"] scratchpad show, move position center
 
 # Shortcuts for Logitech Master 2S
 bindsym --whole-window --border button6 exec pactl set-sink-volume @DEFAULT_SINK@ +5% 	# thumb wheel up
@@ -351,6 +366,7 @@ bindsym --whole-window --border button9 exec playerctl play-pause						# thumb b
 
 # Program shortcuts
 bindsym Mod1+c exec chromium --disk-cache-dir=/tmp/chromium_cache --process-per-site
+bindsym Mod1+d exec urxvt -name dropdown
 bindsym Mod1+g exec gitkraken
 bindsym Mod1+k exec gpick -p
 bindsym Mod1+q exec qalculate-gtk
