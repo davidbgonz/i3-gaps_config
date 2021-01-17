@@ -348,7 +348,7 @@ exec --no-startup-id numlockx on
 #bindcode 67 exec --no-startup-id xfce4-terminal --disable-server --dropdown --hide-menubar
 #bindsym F1 exec xfce4-terminal --drop-down
 exec --no-startup-id urxvt -name dropdown
-for_window [instance="dropdown"] flating enable, resize set 1200 500, move scratchpad
+for_window [instance="dropdown"] floating enable, resize set 1200 500, move scratchpad
 bindsym F1 [instance="dropdown"] scratchpad show, move position center
 
 # Shortcuts for Logitech Master 2S
@@ -359,6 +359,7 @@ bindsym --whole-window --border button9 exec playerctl play-pause						# thumb b
 
 # Program shortcuts
 bindsym Mod1+c exec google-chrome-stable --disk-cache-dir=/tmp/google-chrome-stable_cache
+bindsym Mod1+d exec urxvt -name dropdown
 bindsym Mod1+g exec gitkraken
 bindsym Mod1+k exec gpick -p
 bindsym Mod1+q exec qalculate-gtk
