@@ -395,7 +395,7 @@ exec --no-startup-id i3-msg 'workspace 1; exec evolution'
 # workspace 2 windows
 #assign [class="Code"] 2
 #exec --no-startup-id i3-msg 'workspace 2; exec code'
-exec --no-startup-id i3-msg 'workspace 2; exec urxvt -e vim ~/Development'
+exec --no-startup-id i3-msg 'workspace 2; exec urxvt'
 # workspace 3 windows
 exec --no-startup-id i3-msg 'workspace 3; exec firefox-developer-edition'
 # workspace 4 windows
