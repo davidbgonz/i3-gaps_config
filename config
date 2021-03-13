@@ -13,8 +13,6 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:monospace 8
-#font pango:terminus 10
 font pango:Terminess (TTF) Nerd Font Complete 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -31,75 +29,71 @@ font pango:Terminess (TTF) Nerd Font Complete 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec terminator
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Start application launcher
+exec picom -b
+bindsym $mod+d exec rofi -show drun -theme matpale
 
-# change focus
+# Change focus
 #bindsym $mod+j focus left
 #bindsym $mod+k focus down
 #bindsym $mod+l focus up
 #bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move focused window
 #bindsym $mod+Shift+j move left
 #bindsym $mod+Shift+k move down
 #bindsym $mod+Shift+l move up
 #bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+h split h
 
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# make the currently focused window a scratchpad
+# Make the currently focused window a scratchpad
 bindsym $mod+minus move scratchpad
 
-# show the first scratchpad window
+# Show the first scratchpad window
 bindsym $mod+equal scratchpad show
 
-# focus the parent container
+# Focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
+# Focus the child container
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -114,7 +108,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -126,7 +120,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -138,7 +132,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# automatic back-and-forth workspace switching
+# Automatic back-and-forth workspace switching
 workspace_auto_back_and_forth yes
 
 # Automatically open new workspace based on lowest number
@@ -146,11 +140,11 @@ bindsym $mod+n exec --no-startup-id ~/.config/i3/bin/i3-next-available-workspace
 # Move focused container to a new workspace based on lowest number
 bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/bin/i3-next-available-workspace -m
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Mode for different bye-bye options
@@ -172,7 +166,7 @@ mode "$mode_system" {
 #bindsym $mod+Escape mode "$mode_system"
 bindsym $mod+Escape exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 
-# resize window (you can also use the mouse for that)
+# Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -185,7 +179,7 @@ mode "resize" {
         bindsym l resize grow height 10 px or 5 ppt
         bindsym semicolon resize grow width 10 px or 5 ppt
 
-        # same bindings, but for the arrow keys
+        # Same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 5 ppt
         bindsym Down resize shrink height 10 px or 5 ppt
         bindsym Up resize grow height 10 px or 5 ppt
@@ -196,12 +190,11 @@ mode "resize" {
         bindsym equal gaps inner current plus 5
         bindsym minus gaps inner current minus 5
 
-        # back to normal: Enter or Escape or $mod+r
+        # Back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # Jump to urgent window
@@ -209,7 +202,7 @@ bindsym $mod+x [urgent=latest] focus
 
 ### Rice Cooker ###
 
-# define Material Pale palette
+# Define Material Pale palette
 set $BG		#292D3E
 set $FG		#959DCB
 
@@ -231,7 +224,7 @@ set $BMAG	#C792EA
 set $BCYN	#89DDFF
 set $BWHT	#EAECF5
 
-# window colors
+# Window colors
 #                       border  background  text  indicator  child_border
 client.focused          $BG     $BG         $BLU  $MAG       $BLU
 client.focused_inactive $BG     $BG         $FG   $BG        $BG
@@ -245,29 +238,23 @@ hide_edge_borders both
 
 ### Dinner is Ready ###
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#	colors {
-#		background $BG
-#		separator $BG
-#		#			border	background	text
-#		focused_workspace	$BG	$BLK		$YLW
-#		inactive_workspace	$BG	$BG		$FG
-#		urgent_workspace	$RED	$BG		$RED
-#	}
-#	position top
-#	tray_output primary
-#}
+# Start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
+
+# Startup tray apps
+exec --no-startup-id nm-applet --no-agent
+#exec --no-startup-id wicd-gtk --tray
+
+# Notification daemon
+# Note: no-startup-id should be omitted for dunst
+exec dunst
 
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
 gaps inner 10
 
 # Monitor/s config
-# Backgrounds are setup in script to make sure they are executed
-# after monitor resolutions are setup
+# Backgrounds are setup in script to make sure they are executed after monitor resolutions are setup
 exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
 
 # Pulse Audio controls
@@ -285,10 +272,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
-# Rofi config
-exec picom -b
-bindsym $mod+d exec rofi -show drun -theme matpale
-
 # Windows to float
 for_window [class="Arandr" instance="arandr"] floating enable
 for_window [class="Caffeine" title="Preferences"] floating enable
@@ -296,13 +279,10 @@ for_window [class="feh" title="feh \[1 of 1\]"] floating enable
 for_window [class="firefoxdeveloperedition" instance="Alert" window_role="alert"] floating enable
 for_window [class="firefoxdeveloperedition" window_role="page-info"] floating enable
 for_window [class="Gpick"] floating enable
-for_window [class="Google Play Music Desktop Player" title="Settings"] floating enable
-for_window [class="Google Play Music Desktop Player" title="Color Picker"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pamac-*"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="polychromatic-controller"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [class="URxvt" title="nmtui"] floating enable
@@ -315,39 +295,23 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Setup automounter
 exec --no-startup-id "devmon --no-gui"
-#exec --no-startup-id devmon
 
 # i3-lock config
 bindsym $mod+l exec $Locker
-# auto lock timer
+# Auto lock timer
 exec --no-startup-id xautolock -time 10 -locker i3lock-custom
-# auto screen-off timer
+# Auto screen-off timer
 #exec_always --no-startup-id xset s off
 #exec_always --no-startup-id xset s noblank
 #exec_always --no-startup-id xset dpms 0 0 3600
 
 # Autotiling
-exec --no-startup-id autotiling
-
-# Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch-polybar.sh &
-
-# Startup tray apps
-exec --no-startup-id nm-applet --no-agent
-#exec --no-startup-id wicd-gtk --tray
-exec --no-startup-id polychromatic-tray-applet
-#exec --no-startup-id razercommander -q
-
-# Notification daemon
-# Note: no-startup-id should be omited for dunst
-exec dunst
+#exec --no-startup-id autotiling
 
 # Turn on numlock by default
 exec --no-startup-id numlockx on
 
 # Dropdown Terminal shortcut
-#bindcode 67 exec --no-startup-id xfce4-terminal --disable-server --dropdown --hide-menubar
-#bindsym F1 exec xfce4-terminal --drop-down
 exec --no-startup-id urxvt -name dropdown
 for_window [instance="dropdown"] floating enable, resize set 1000 500, move scratchpad
 bindsym F1 [instance="dropdown"] scratchpad show, move position center
@@ -361,7 +325,6 @@ bindsym --whole-window --border button9 exec playerctl play-pause						# thumb b
 # Program shortcuts
 bindsym Mod1+c exec google-chrome-stable --disk-cache-dir=/tmp/google-chrome-stable_cache
 bindsym Mod1+d exec urxvt -name dropdown
-bindsym Mod1+g exec gitkraken
 bindsym Mod1+k exec gpick -p
 bindsym Mod1+q exec qalculate-gtk
 bindsym Mod1+r exec urxvt -e ranger ~
