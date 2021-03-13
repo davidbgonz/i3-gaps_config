@@ -255,7 +255,7 @@ gaps inner 10
 
 # Monitor/s config
 # Backgrounds are setup in script to make sure they are executed after monitor resolutions are setup
-exec_always --no-startup-id $HOME/.config/i3/setupMonitors.sh
+exec_always --no-startup-id $HOME/.screenlayout/setup-screenlayout.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 	# increase sound volume
