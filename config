@@ -36,7 +36,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Start application launcher
-exec picom -b
 bindsym $mod+d exec rofi -show drun -theme matpale
 
 # Change focus
@@ -252,6 +251,9 @@ exec dunst
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
 gaps inner 10
+
+# Start picom
+exec picom -b
 
 # Monitor/s config
 # Backgrounds are setup in script to make sure they are executed after monitor resolutions are setup
