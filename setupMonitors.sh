@@ -13,4 +13,4 @@ fi
 
 # Set backgrounds for connected monitors
 #feh --randomize --bg-scale ~/Pictures/material_*
-feh --bg-fill /usr/share/backgrounds/static/jump-ship.jpg
+feh --bg-fill /usr/share/backgrounds/static/lan-before-time.jpg
